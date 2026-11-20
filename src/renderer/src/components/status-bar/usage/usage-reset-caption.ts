@@ -14,6 +14,15 @@ export function validResetAt(resetsAt: number | null | undefined): number | null
   return resetsAt != null && Number.isFinite(new Date(resetsAt).getTime()) ? resetsAt : null
 }
 
+/** Locale-aware "3h 35m", floored to whole minutes; "now" when not positive. */
+export function formatLocalizedDuration(ms: number, intlLocale: string): string {
+  return formatResetDuration(ms, (value, unit) =>
+    intlLocale.startsWith('en')
+      ? formatUiNarrowDuration(value, unit, intlLocale)
+      : uiNumberFormat(RESET_UNIT_FORMATS[unit], intlLocale).format(value)
+  )
+}
+
 /** Locale-aware "3h 35m"; null when the reset is unknown or already passed. */
 export function formatLocalizedResetDuration(
   resetsAt: number | null | undefined,
@@ -24,11 +33,7 @@ export function formatLocalizedResetDuration(
   if (at == null || at <= now) {
     return null
   }
-  return formatResetDuration(at - now, (value, unit) =>
-    intlLocale.startsWith('en')
-      ? formatUiNarrowDuration(value, unit, intlLocale)
-      : uiNumberFormat(RESET_UNIT_FORMATS[unit], intlLocale).format(value)
-  )
+  return formatLocalizedDuration(at - now, intlLocale)
 }
 
 /** "resets in 3h 35m" / "resets now"; null when the window reports no reset. */

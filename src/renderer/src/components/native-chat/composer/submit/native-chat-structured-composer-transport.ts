@@ -52,6 +52,8 @@ export type NativeChatStructuredComposerTransport = {
   acceptsImages?: boolean
   /** The session's context usage; null until the journal can state it. */
   contextUsage?: StructuredAgentContextUsage | null
+  /** Client-clock time a Claude session last read its prompt cache; null for other agents or before a turn. */
+  promptCacheUsedAt?: number | null
   /** The agent's guess at the next prompt, absent while a queued message will be sent next. */
   promptSuggestion?: AgentSessionPromptSuggestion | null
   worktreeId?: string

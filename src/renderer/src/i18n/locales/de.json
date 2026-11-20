@@ -8091,13 +8091,13 @@
           "05de84a104": "1 Stunde",
           "54395ecd7c": "5 Minuten",
           "8b9e202e0a": "Auf die Cache-TTL des Anbieters abstimmen. Der Standardwert beträgt 5 Minuten.",
-          "487b176240": "Eine Restzeitanzeige in der Seitenleiste einblenden, sobald ein Claude-Agent inaktiv wird.",
           "9c20253679": "Eine Restzeitanzeige einblenden, sobald ein Claude-Agent inaktiv wird.",
           "fe590653c1": "Claude speichert die Unterhaltung im Cache, um Kosten zu senken. Bei zu langer Inaktivität läuft der Cache ab, und die nächste Nachricht sendet den gesamten Kontext erneut zu höheren Kosten. Die Restzeitanzeige zeigt, wann die Unterhaltung fortgesetzt werden sollte.",
           "80c454e8a6": "Auf die Cache-TTL des Anbieters abstimmen.",
           "915265188a": "Prompt-Cache-Timer",
           "988e060497": "Cache-Timer",
-          "eec81ddfee": "Timer-Dauer"
+          "eec81ddfee": "Timer-Dauer",
+          "sidebarAndComposer": "Eine Restzeitanzeige in der Seitenleiste und im Chat-Eingabefeld einblenden, sobald ein Claude-Agent inaktiv wird."
         },
         "GeneralEditorSettingsSection": {
           "f80603d293": "Steuerelemente für Markdown-Notizen in jeder Markdown-Ansicht anzeigen und Markdown-Notizen in Aktionen zur Übergabe an Agenten einbeziehen.",
@@ -20230,7 +20230,11 @@
         "many_other": "{{count}} Pull Requests erstellt"
       },
       "splitRight": "Rechts teilen",
-      "splitDown": "Unten teilen"
+      "splitDown": "Unten teilen",
+      "promptCache": {
+        "expired": "Prompt-Cache wahrscheinlich abgelaufen (inaktiv seit {{idle}}).",
+        "expiresIn": "Prompt-Cache läuft in {{time}} ab"
+      }
     },
     "tab": {
       "bar": {

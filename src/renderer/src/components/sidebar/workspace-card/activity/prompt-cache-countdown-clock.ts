@@ -86,6 +86,12 @@ function getInactivePromptCacheCountdownNow(): number {
   return 0
 }
 
+/** `m:ss` left on the cache, rounded up so it reads 0:00 only once expired. */
+export function formatPromptCacheCountdown(remainingMs: number): string {
+  const totalSeconds = Math.ceil(Math.max(0, remainingMs) / 1000)
+  return `${Math.floor(totalSeconds / 60)}:${(totalSeconds % 60).toString().padStart(2, '0')}`
+}
+
 export function usePromptCacheCountdownNow(active: boolean): number {
   return useSyncExternalStore(
     active ? subscribePromptCacheCountdownClock : subscribeInactivePromptCacheCountdown,

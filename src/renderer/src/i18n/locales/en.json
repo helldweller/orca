@@ -9234,13 +9234,13 @@
           "05de84a104": "1 hour",
           "54395ecd7c": "5 minutes",
           "8b9e202e0a": "Match this to your provider's cache TTL. The default is 5 minutes.",
-          "487b176240": "Show a countdown in the sidebar after a Claude agent becomes idle.",
           "9c20253679": "Show a countdown after a Claude agent becomes idle.",
           "fe590653c1": "Claude caches your conversation to reduce costs. When idle too long the cache expires and the next message resends full context at higher cost. This shows a countdown so you know when to resume.",
           "80c454e8a6": "Match this to your provider's cache TTL.",
           "915265188a": "Prompt cache timer",
           "988e060497": "Cache timer",
-          "eec81ddfee": "Timer duration"
+          "eec81ddfee": "Timer duration",
+          "sidebarAndComposer": "Show a countdown in the sidebar and the chat composer after a Claude agent becomes idle."
         },
         "GeneralEditorSettingsSection": {
           "f80603d293": "Show markdown note controls in every markdown view and include markdown notes in agent handoff actions.",
@@ -22471,6 +22471,10 @@
         "anotherComputer": "another computer",
         "fromVia": "From {{name}} via {{computer}}",
         "fromViaPhone": "From {{name}}, typed on {{phone}} via {{computer}}"
+      },
+      "promptCache": {
+        "expired": "Prompt cache likely expired (idle {{idle}}).",
+        "expiresIn": "Prompt cache expires in {{time}}"
       }
     },
     "tab": {

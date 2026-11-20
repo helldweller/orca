@@ -155,6 +155,7 @@ export function useNativeChatComposerEditSession({
         goalMode: undefined,
         sessionOptionsSurface: null,
         contextUsage: null,
+        promptCacheUsedAt: null,
         sessionOptionsPickerRequest: null,
         onChoosePickerItem: chooseEditItem
       }

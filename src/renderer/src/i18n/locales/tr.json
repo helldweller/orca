@@ -8201,13 +8201,13 @@
           "05de84a104": "1 saat",
           "54395ecd7c": "5 dakika",
           "8b9e202e0a": "Bunu sağlayıcınızın önbellek TTL süresiyle eşleştirin. Varsayılan 5 dakikadır.",
-          "487b176240": "Bir Claude ajanı boşta kaldıktan sonra kenar çubuğunda geri sayım gösterin.",
           "9c20253679": "Bir Claude ajanı boşta kaldıktan sonra geri sayım gösterin.",
           "fe590653c1": "Claude, maliyetleri azaltmak için konuşmanızı önbelleğe alır. Çok uzun süre boşta kalındığında önbelleğin süresi dolar ve sonraki mesaj tam bağlamı daha yüksek maliyetle yeniden gönderir. Bu, ne zaman devam edeceğinizi bilmeniz için bir geri sayım gösterir.",
           "80c454e8a6": "Bunu sağlayıcınızın önbellek TTL süresiyle eşleştirin.",
           "915265188a": "İstem Önbelleği Zamanlayıcısı",
           "988e060497": "Önbellek Zamanlayıcısı",
-          "eec81ddfee": "Zamanlayıcı Süresi"
+          "eec81ddfee": "Zamanlayıcı Süresi",
+          "sidebarAndComposer": "Bir Claude ajanı boşta kaldıktan sonra kenar çubuğunda ve sohbet giriş alanında geri sayım gösterin."
         },
         "GeneralEditorSettingsSection": {
           "f80603d293": "Her Markdown görünümünde not kontrollerini gösterin ve ajan devretme işlemlerine Markdown notlarını dahil edin.",
@@ -20377,7 +20377,11 @@
         "many_other": "{{count}} pull request oluşturuldu"
       },
       "splitRight": "Sağa Böl",
-      "splitDown": "Aşağı Böl"
+      "splitDown": "Aşağı Böl",
+      "promptCache": {
+        "expired": "İstem önbelleğinin süresi muhtemelen doldu ({{idle}} boşta).",
+        "expiresIn": "İstem önbelleğinin süresi {{time}} sonra dolacak"
+      }
     },
     "tab": {
       "bar": {

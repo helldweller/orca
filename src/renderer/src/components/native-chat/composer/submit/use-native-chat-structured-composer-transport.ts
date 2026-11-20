@@ -225,6 +225,7 @@ export function useNativeChatStructuredComposerTransport(args: {
       commandsChecking: controller.commandsChecking,
       acceptsImages,
       contextUsage: controller.contextUsage,
+      promptCacheUsedAt: controller.promptCacheUsedAt,
       promptSuggestion: showsPromptSuggestions ? controller.promptSuggestion : null,
       worktreeId,
       onError,

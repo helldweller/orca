@@ -24,6 +24,8 @@ import { NativeChatComposerPrimaryButton } from './NativeChatComposerPrimaryButt
 import { NativeChatAttachButton } from './NativeChatAttachButton'
 import { NativeChatDictationButton } from './NativeChatDictationButton'
 import { NativeChatContextUsageRing } from '../../usage/NativeChatContextUsageRing'
+import { NativeChatPromptCacheIndicator } from '../../usage/NativeChatPromptCacheIndicator'
+import { useAppStore } from '@/store'
 import type { NativeChatContextUsageSummary } from '../../../../../../shared/native-chat/native-chat-context-usage-summary'
 import type { NativeChatOptionPickerRequest } from '../../session/options/controls/native-chat-option-picker-request'
 import type { NativeChatSteerChordPreview } from '../../../../../../shared/native-chat/input/composer/use-native-chat-steer-chord-preview'
@@ -63,6 +65,8 @@ export type NativeChatComposerActionsProps = {
   onExitGoalMode?: () => void
   /** Absent until the session has reported or the transcript can estimate. */
   contextUsage?: NativeChatContextUsageSummary | null
+  /** When a Claude session last read its prompt cache; absent hides the cache clock. */
+  promptCacheUsedAt?: number | null
   /** The chat's agent, whose permission modes the picker describes. */
   agent?: string
   /** A launch prompt: Attach and dictation are its only controls; launching is the panel's. */
@@ -96,6 +100,7 @@ export const NativeChatComposerActions = memo(function NativeChatComposerActions
   sessionOptionsPickerRequest,
   onExitGoalMode,
   contextUsage,
+  promptCacheUsedAt,
   focusComposer,
   agent,
   launchPrompt = false
@@ -103,6 +108,9 @@ export const NativeChatComposerActions = memo(function NativeChatComposerActions
   const t = useTranslate()
   useUiLanguageRevision()
   const roomReplies = useContext(NativeChatRoomContext)?.replies
+  const promptCacheTtlMs = useAppStore((s) =>
+    s.settings?.promptCacheTimerEnabled ? s.settings.promptCacheTtlMs : 0
+  )
   const mode = useNativeChatPlanMode({
     surface: sessionOptionsSurface,
     snapshot: sessionOptionsSnapshot,
@@ -239,6 +247,17 @@ export const NativeChatComposerActions = memo(function NativeChatComposerActions
       : [])
   ]
   const right: NativeChatComposerControl[] = [
+    ...(promptCacheUsedAt != null && promptCacheTtlMs > 0
+      ? [
+          {
+            id: 'prompt-cache',
+            priority: 1,
+            content: (
+              <NativeChatPromptCacheIndicator usedAt={promptCacheUsedAt} ttlMs={promptCacheTtlMs} />
+            )
+          }
+        ]
+      : []),
     {
       id: 'model',
       content: (

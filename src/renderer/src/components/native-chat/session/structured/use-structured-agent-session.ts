@@ -44,6 +44,7 @@ import { hostStatesTurnScopes } from '../../../../../../shared/native-chat/trans
 import { withNativeChatCutTurnNotices } from '../../../../../../shared/native-chat/transcript/turns/native-chat-cut-turn-notice'
 import { useNativeChatContextClearFloor } from '../../conversation/projection/use-native-chat-context-clear-floor'
 import { useStructuredAgentSessionRewind } from '../../messages/actions/use-structured-agent-session-rewind'
+import { agentSessionPromptCacheUsedAt } from '../../../../../../shared/agent-session/view/agent-session-prompt-cache-used-at'
 
 export function useStructuredAgentSession(args: StructuredAgentSessionViewArgs) {
   const {
@@ -316,6 +317,11 @@ export function useStructuredAgentSession(args: StructuredAgentSessionViewArgs) 
     unavailable,
     threadGoal,
     contextUsage: usage,
+    /** Anthropic's prompt cache TTL is Claude's alone; other agents show no cache clock. */
+    promptCacheUsedAt:
+      agent === 'claude'
+        ? agentSessionPromptCacheUsedAt(transportState.latestTurn, state.hostClock)
+        : null,
     /** Whether this session takes images, by its options report; undefined until it answers. */
     ...sessionSupport
   }

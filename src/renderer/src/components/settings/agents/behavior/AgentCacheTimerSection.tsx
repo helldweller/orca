@@ -50,8 +50,8 @@ export function AgentCacheTimerSection({
           </div>
           <p className="text-xs text-muted-foreground">
             {t(
-              'auto.components.settings.AgentCacheTimerSection.487b176240',
-              'Show a countdown in the sidebar after a Claude agent becomes idle.'
+              'auto.components.settings.AgentCacheTimerSection.sidebarAndComposer',
+              'Show a countdown in the sidebar and the chat composer after a Claude agent becomes idle.'
             )}
           </p>
         </div>

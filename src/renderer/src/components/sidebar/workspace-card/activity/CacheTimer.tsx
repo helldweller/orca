@@ -3,7 +3,10 @@ import { cn } from '@/lib/class-names'
 import { Timer } from 'lucide-react'
 import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip'
 import { useShallow } from 'zustand/react/shallow'
-import { usePromptCacheCountdownNow } from './prompt-cache-countdown-clock'
+import {
+  formatPromptCacheCountdown,
+  usePromptCacheCountdownNow
+} from './prompt-cache-countdown-clock'
 import {
   getMostUrgentPromptCacheStartedAt,
   getPromptCacheCountdownForPane,
@@ -63,10 +66,7 @@ export default function CacheTimer({
   const now = usePromptCacheCountdownNow(true)
   const remainingMs = Math.max(0, ttlMs - (now - startedAt))
 
-  const totalSeconds = Math.ceil(remainingMs / 1000)
-  const minutes = Math.floor(totalSeconds / 60)
-  const seconds = totalSeconds % 60
-  const label = `${minutes}:${seconds.toString().padStart(2, '0')}`
+  const label = formatPromptCacheCountdown(remainingMs)
 
   const expired = remainingMs === 0
   const warning = !expired && remainingMs <= 60_000

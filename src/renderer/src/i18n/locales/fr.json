@@ -7944,13 +7944,13 @@
           "05de84a104": "1 heure",
           "54395ecd7c": "5 minutes",
           "8b9e202e0a": "Alignez cette durée sur le TTL de cache de votre fournisseur. Par défaut : 5 minutes.",
-          "487b176240": "Afficher un compte à rebours dans la barre latérale quand un agent Claude devient inactif.",
           "9c20253679": "Afficher un compte à rebours quand un agent Claude devient inactif.",
           "fe590653c1": "Claude met votre conversation en cache pour réduire les coûts. Après une trop longue inactivité, le cache expire et le message suivant renvoie tout le contexte, à un coût plus élevé. Ce compte à rebours vous indique quand reprendre.",
           "80c454e8a6": "Alignez cette durée sur le TTL de cache de votre fournisseur.",
           "915265188a": "Minuteur de cache de prompt",
           "988e060497": "Minuteur de cache",
-          "eec81ddfee": "Durée du minuteur"
+          "eec81ddfee": "Durée du minuteur",
+          "sidebarAndComposer": "Afficher un compte à rebours dans la barre latérale et le champ de saisie du chat quand un agent Claude devient inactif."
         },
         "GeneralEditorSettingsSection": {
           "f80603d293": "Afficher les contrôles des notes markdown dans toutes les vues markdown et inclure ces notes dans les actions de passation aux agents.",
@@ -20268,7 +20268,11 @@
         "many_many": "{{count}} pull requests créées"
       },
       "splitRight": "Diviser à droite",
-      "splitDown": "Diviser vers le bas"
+      "splitDown": "Diviser vers le bas",
+      "promptCache": {
+        "expired": "Le cache de prompt a probablement expiré (inactif depuis {{idle}}).",
+        "expiresIn": "Le cache de prompt expire dans {{time}}"
+      }
     },
     "tab": {
       "bar": {

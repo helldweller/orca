@@ -7675,13 +7675,13 @@
           "05de84a104": "1 hora",
           "54395ecd7c": "5 minutos",
           "8b9e202e0a": "Haz que esto coincida con el TTL de caché de tu proveedor. El valor predeterminado es 5 minutos.",
-          "487b176240": "Muestra una cuenta regresiva en la barra lateral después de que un agente de Claude quede inactivo.",
           "9c20253679": "Muestra una cuenta regresiva después de que un agente de Claude quede inactivo.",
           "fe590653c1": "Claude cachea tu conversación para reducir costos. Si queda inactiva demasiado tiempo, la caché caduca y el siguiente mensaje reenvía todo el contexto con mayor costo. Esto muestra una cuenta regresiva para que sepas cuándo reanudar.",
           "80c454e8a6": "Haz que esto coincida con el TTL de caché de tu proveedor.",
           "915265188a": "Prompt Cache Timer",
           "988e060497": "Temporizador de caché",
-          "eec81ddfee": "Duración del temporizador"
+          "eec81ddfee": "Duración del temporizador",
+          "sidebarAndComposer": "Muestra una cuenta regresiva en la barra lateral y en el campo de mensaje del chat después de que un agente de Claude quede inactivo."
         },
         "GeneralEditorSettingsSection": {
           "f80603d293": "Muestra controles de notas Markdown en todas las vistas Markdown e incluye esas notas en las acciones de handoff de agentes.",
@@ -19997,7 +19997,11 @@
         "many_many": "{{count}} solicitudes de extracción creadas"
       },
       "splitRight": "Dividir a la derecha",
-      "splitDown": "Dividir hacia abajo"
+      "splitDown": "Dividir hacia abajo",
+      "promptCache": {
+        "expired": "La caché del prompt probablemente caducó (inactivo {{idle}}).",
+        "expiresIn": "La caché del prompt caduca en {{time}}"
+      }
     },
     "tab": {
       "bar": {

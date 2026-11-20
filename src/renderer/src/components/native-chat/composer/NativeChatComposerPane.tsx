@@ -407,6 +407,7 @@ export const NativeChatComposerPane = forwardRef<ComposerHandle, C.NativeChatCom
               sessionOptionsSurface={sessionOptions.surface}
               sessionOptionsSnapshot={sessionOptions.snapshot}
               contextUsage={contextUsageSummary}
+              promptCacheUsedAt={structuredTransport?.promptCacheUsedAt ?? null}
               sessionOptionsPickerRequest={structuredTransport?.optionPickerRequest ?? null}
               agent={agent}
               launchPrompt={launchPrompt}
